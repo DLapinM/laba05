@@ -2,7 +2,7 @@ package itmo.laba5;
 
 public class MyMethods
 {
-    public static String GetLongestWord(String text)
+    public static String getLongestWord(String text)
     {
         String[] words = text.split(" ");
 
@@ -19,7 +19,7 @@ public class MyMethods
         return longestWord;
     }
 
-    public static String GetInvertWord(String word)
+    public static String getInvertWord(String word)
     {
         char[] wordArr = word.toCharArray();
 
@@ -42,20 +42,20 @@ public class MyMethods
         return reverse;
     }
 
-    public static Boolean CheckForPalindrom(String word)
+    public static Boolean checkForPalindrom(String word)
     {
-        String reverse = GetInvertWord(word);
+        String reverse = getInvertWord(word);
 
         if (word.equals(reverse)) return true;
         else return false;
     }
 
-    public static String ChangeBadWords(String text)
+    public static String changeBadWords(String text, String badword, String goodword)
     {
-        return text.replaceAll("бяка", "[вырезано цензурой]");
+        return text.replaceAll(badword, goodword);
     }
 
-    public static int GetQuantitySubstringsInString(String string, String substring)
+    public static int getQuantitySubstringsInString(String string, String substring)
     {
         if(string.equals(substring)) return 1;
         if (substring.length() > string.length()) return 0;
@@ -79,7 +79,7 @@ public class MyMethods
         return q;
     }
 
-    public static String GetInvertedWordsInString(String text)
+    public static String getInvertedWordsInString(String text)
     {
         String[] words = text.split(" ");
 
@@ -89,7 +89,7 @@ public class MyMethods
 
         for (int i = 0; i < words.length; i++)
         {
-            rezString += MyMethods.GetInvertWord(words[i]);
+            rezString += MyMethods.getInvertWord(words[i]);
             if (i < words.length - 1) rezString += " ";
         }
 
